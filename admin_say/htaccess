@@ -1,0 +1,23 @@
+############### SET Rewrite ON ##################
+<ifmodule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /admin_say
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) index.php?&link=$1 [L]
+
+RewriteCond %{HTTP_USER_AGENT} libwww [NC,OR]
+RewriteCond %{QUERY_STRING} ^(.*)=http [NC]
+RewriteRule ^(.*)$ – [F,L]
+
+
+</ifmodule>
+#<IfModule mod_security.c>
+ #   SecFilterScanPOST Off
+#</IfModule>

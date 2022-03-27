@@ -1,0 +1,15 @@
+.invoice-box{max-width:800px;margin:auto;padding:50px;border:0 solid #eee;line-height:15px;font-family:"Arial";color:#555;font-size:9pt}.invoice-box table{width:100%;line-height:inherit;text-align:left}.invoice-box table td{padding:5px;vertical-align:top}.invoice-box table tr td:nth-child(2){text-align:right}.invoice-box table tr.top table td{padding-bottom:5px}.invoice-box table tr.top table td.title{font-size:45px;line-height:45px;color:#333}.invoice-box table tr.information table td{padding-bottom:20px}.invoice-box table tr.heading td{background:#eee;border-bottom:1px solid #ddd;font-weight:700;width:50%}.invoice-box table tr.details td{padding-bottom:5px}.invoice-box table tr.item td{border-bottom:1px solid #1b1b1c}.invoice-box table tr.item.last td{border-bottom:none}h4{font-size:1.2em}tr.total td{padding-top:15px;padding-bottom:0}tr.satuan td{padding-bottom:10px}.form-control{width:100%}.break{display:block;clear:both}	
+tr.pekerjaan td {padding-top:8px;}
+tr.listharga td {border-bottom:1px solid #eee;padding-bottom:8px;}
+@page {
+size: 210mm 297mm; 
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}

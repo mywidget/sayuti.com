@@ -1,0 +1,50 @@
+<?php
+class Barang extends CI_Controller{
+	function __construct(){
+		parent::__construct();
+		$this->load->model('m_barang');
+	}
+	function index(){
+        $data['id'] = $this->m_barang->getID();
+		$this->load->view('v_barang',$data);
+	}
+
+	function data_barang(){
+		$data=$this->m_barang->barang_list();
+		echo json_encode($data);
+	}
+
+	function get_barang(){
+		$id=$this->input->get('id');
+		$data=$this->m_barang->get_barang_by_kode($id);
+		echo json_encode($data);
+	}
+
+	function simpan_barang(){
+		$id=$this->input->post('id');
+		$ncp=$this->input->post('ncp');
+		$ncw=$this->input->post('ncw');
+		//$icp=$this->input->post('icp');
+		//$icw=$this->input->post('icw');
+		//$acp=$this->input->post('acp');
+		//$acw=$this->input->post('acw');
+		$data=$this->m_barang->simpan_barang($id,$ncp,$ncw);
+		//$data=$this->m_barang->simpan_barang($id,$ncp,$ncw,$icp,$icw,$acp,$acw);
+		echo json_encode($data);
+	}
+
+	function update_barang(){
+		$kobar=$this->input->post('kobar');
+		$nabar=$this->input->post('nabar');
+		$harga=$this->input->post('harga');
+		$data=$this->m_barang->update_barang($kobar,$nabar,$harga);
+		echo json_encode($data);
+	}
+
+	function hapus_barang(){
+		$kobar=$this->input->post('kode');
+		$data=$this->m_barang->hapus_barang($kobar);
+		echo json_encode($data);
+	}
+
+}
